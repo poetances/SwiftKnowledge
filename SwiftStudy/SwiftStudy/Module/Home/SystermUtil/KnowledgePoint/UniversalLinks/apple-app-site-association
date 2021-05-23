@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "8XGD33DAAX.com.aboout.flashplay",
+                "paths": [ "/flashPlay/*"]
+            }
+        ]
+    }
+}

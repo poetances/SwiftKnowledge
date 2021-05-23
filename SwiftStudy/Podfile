@@ -1,0 +1,94 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftStudy' do
+
+  # 资源管理
+  pod 'R.swift'
+
+  #pod 'Alamofire'
+  pod 'SnapKit'
+
+  pod 'Moya'
+
+  # model。
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  pod 'KakaJSON'
+  
+  pod 'QMUIKit'
+  pod 'iVersion'
+  
+  # facebook动画
+  pod 'pop'
+  #pod 'Spring'
+  
+  # RXSwift
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
+  # RXSwift Community
+  pod 'RxDataSources'
+  
+  # 图片加载
+  pod 'Kingfisher'
+  
+  # 刷新
+  pod 'MJRefresh'
+  #pod 'DGElasticPullToRefresh'
+  
+  # 新手指南
+  pod 'Instructions'
+  
+  # yykit
+  pod 'YYKit'
+  
+  # 视频播放
+  pod 'ZFPlayer'
+  
+  # 骨架屏
+  pod 'SkeletonView'
+  
+end
+
+# 用于UITest
+target 'SwiftStudyUITests' do
+
+  #pod 'Alamofire'
+  pod 'SnapKit'
+
+  pod 'Moya'
+
+  # model。
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  
+  pod 'QMUIKit'
+  pod 'iVersion'
+  
+  # facebook动画
+  pod 'pop'
+  #pod 'Spring'
+  
+  # RXSwift
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
+  # RXSwift Community
+  pod 'RxDataSources'
+  
+  # 图片加载
+  pod 'Kingfisher'
+  
+  # 刷新
+  pod 'MJRefresh'
+  #pod 'DGElasticPullToRefresh'
+  
+  # 新手指南
+  pod 'Instructions'
+  
+end
