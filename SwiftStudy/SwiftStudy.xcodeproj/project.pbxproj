@@ -219,6 +219,8 @@
 		A6F7EBB9254EF6B2002557C9 /* timg-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A6F7EBB8254EF6B2002557C9 /* timg-2.jpeg */; };
 		A6FD812925807CD10038DFD5 /* SwiftStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FD812825807CD10038DFD5 /* SwiftStudyTests.swift */; };
 		DAEC8FE9A3F14C45CE67F4A4 /* Pods_SwiftStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A364D759A188B92CBADD97 /* Pods_SwiftStudyUITests.framework */; };
+		DEFD3EBE26C6AB78004B57EA /* ConstraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD3EBD26C6AB78004B57EA /* ConstraitViewController.swift */; };
+		DEFD3EC026C6ACFE004B57EA /* ConstraitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFD3EBF26C6ACFE004B57EA /* ConstraitViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -499,6 +501,8 @@
 		A6FD812825807CD10038DFD5 /* SwiftStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudyTests.swift; sourceTree = "<group>"; };
 		A6FD812A25807CD10038DFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9B04D9ADF254DF4D40086C /* Pods_SwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFD3EBD26C6AB78004B57EA /* ConstraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraitViewController.swift; sourceTree = "<group>"; };
+		DEFD3EBF26C6ACFE004B57EA /* ConstraitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConstraitViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,6 +605,7 @@
 		A60113D623B0539500E6E5EF /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				DEFD3EBC26C6AB59004B57EA /* Contrait */,
 				A6A77AD7259D6920009F7C5C /* UIKeyInput */,
 				A6AC3C33259083A800F3820E /* WKWebView */,
 				A6204CA62550FD1C0076A19A /* UIFont */,
@@ -1796,6 +1801,15 @@
 			path = SwiftStudyTests;
 			sourceTree = "<group>";
 		};
+		DEFD3EBC26C6AB59004B57EA /* Contrait */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD3EBD26C6AB78004B57EA /* ConstraitViewController.swift */,
+				DEFD3EBF26C6ACFE004B57EA /* ConstraitViewController.xib */,
+			);
+			path = Contrait;
+			sourceTree = "<group>";
+		};
 		E7B7DE85741CAF1B58BD587F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1965,6 +1979,7 @@
 				A6809DDC25665B4100EFC7C6 /* cat.gif in Resources */,
 				A62C405B23BB23C4001584CF /* SSHandyJsonVC.xib in Resources */,
 				A6D5850623BD826F00F11F14 /* SSGenericityVC.xib in Resources */,
+				DEFD3EC026C6ACFE004B57EA /* ConstraitViewController.xib in Resources */,
 				A60564F023C6B7F200720AC3 /* SSUniversalLinksVC.xib in Resources */,
 				A6983D3F23CD6EE6006F720F /* SSMoyaVC.xib in Resources */,
 				A6B8029E23CCB41D00DED3CB /* SSPointVC.xib in Resources */,
@@ -2239,6 +2254,7 @@
 				A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */,
 				A60BD7B623CC7999007E753B /* OCClass+Category.m in Sources */,
 				A60151E626292554003BDCB0 /* R.swift in Sources */,
+				DEFD3EBE26C6AB78004B57EA /* ConstraitViewController.swift in Sources */,
 				A6809DC92566014800EFC7C6 /* SSExtentsionViewController.swift in Sources */,
 				A6042AA724A0883200147D62 /* SSTableViewController.swift in Sources */,
 				A6C6D5EA23B4A14C000370C4 /* SSRangeVC.swift in Sources */,
@@ -2529,8 +2545,39 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = TQA3G2DZ62;
 				DYLIB_CURRENT_VERSION = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftStudy/framwork",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(CONFIG_FLAG)=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Differentiator/Differentiator.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON/HandyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Instructions/Instructions.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KakaJSON/KakaJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QMUIKit/QMUIKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Result/Result.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxDataSources/RxDataSources.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkeletonView/SkeletonView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYKit/YYKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/iVersion/iVersion.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+				);
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2538,13 +2585,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.1;
-				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG)";
+				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG) $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -2559,8 +2607,40 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TQA3G2DZ62;
 				DYLIB_CURRENT_VERSION = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftStudy/framwork",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(CONFIG_FLAG)=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Differentiator/Differentiator.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON/HandyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Instructions/Instructions.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KakaJSON/KakaJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya/Moya.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QMUIKit/QMUIKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Result/Result.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxDataSources/RxDataSources.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkeletonView/SkeletonView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYKit/YYKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/iVersion/iVersion.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+					"${PODS_ROOT}/**",
+				);
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2574,6 +2654,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

@@ -135,6 +135,8 @@ extension SSGenericityVC {
         let temp = item1
         item1 = item2
         item2 = temp
+        
+      
     }
     
     // 可以进行泛型约束

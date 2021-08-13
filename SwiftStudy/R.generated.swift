@@ -387,8 +387,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 16 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
   struct nib {
+    /// Nib `ConstraitViewController`.
+    static let constraitViewController = _R.nib._ConstraitViewController()
     /// Nib `SSErrorVC`.
     static let ssErrorVC = _R.nib._SSErrorVC()
     /// Nib `SSGenericityVC`.
@@ -421,6 +423,14 @@ struct R: Rswift.Validatable {
     static let schedulersViewController = _R.nib._SchedulersViewController()
     /// Nib `TrailViewController`.
     static let trailViewController = _R.nib._TrailViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ConstraitViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.constraitViewController) instead")
+    static func constraitViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.constraitViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "SSErrorVC", in: bundle)`
@@ -550,6 +560,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func constraitViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.constraitViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func schedulersViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.schedulersViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -644,6 +658,17 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _TrailViewController.validate()
+    }
+
+    struct _ConstraitViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ConstraitViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _SSErrorVC: Rswift.NibResourceType {

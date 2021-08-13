@@ -12,7 +12,7 @@ class SSSystermUIVC: QMUICommonTableViewController {
 
     var dataSources: [String]  = {
         return ["UITableView", "FloatLayoutView","PieProgressView","ViewShowWay","Layer", "SSSearchController",
-        "QMUITextField", "QMUITips", "UIPageViewController", "UICollectionViewController", "UIFont", "UIKeyInput"]
+        "QMUITextField", "QMUITips", "UIPageViewController", "UICollectionViewController", "UIFont", "UIKeyInput", "Constrait"]
     }()
     
     private let kCellId = "kCellId"
@@ -67,6 +67,8 @@ class SSSystermUIVC: QMUICommonTableViewController {
             navigationController?.pushViewController(SSUIFontViewController(), animated: true)
         case "UIKeyInput":
             navigationController?.pushViewController(SSUIKeyInputViewController(), animated: true)
+        case "Constrait":
+            navigationController?.pushViewController(ConstraitViewController(), animated: true)
         default:
             return
         }

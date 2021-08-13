@@ -119,7 +119,7 @@ extension UIButton: ShakeAble {
 
 
 // 协议中的属性和方法。
-protocol SSProtocol: class {
+protocol SSProtocol: AnyObject {
     var name: String { get }
     func protocolFunc1()
     

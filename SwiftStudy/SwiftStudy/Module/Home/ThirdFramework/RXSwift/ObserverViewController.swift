@@ -54,6 +54,7 @@ extension ObserverViewController {
     
     private func anyObserver() {
         
+        
         let anyObserver = AnyObserver<Int> { (event: Event<Int>) in
             print(event)
         }
@@ -78,6 +79,7 @@ extension ObserverViewController {
         
         let binder = Binder<String>(self.desLab) { (lab, value) in
             lab.text = "接收到值：\(value)"
+            
             print(value, lab)
         }
         binder.onNext("hello")
@@ -86,6 +88,9 @@ extension ObserverViewController {
         binder.onNext("world")
 
         //Observable<String>.of("hello", "world").bind(to: binder).disposed(by: disposeBag)
+        
+        desLab.rx.text
+        
         
     }
     

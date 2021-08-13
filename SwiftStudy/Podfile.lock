@@ -368,7 +368,7 @@ DEPENDENCIES:
   - ZFPlayer
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - Differentiator
     - HandyJSON
@@ -420,6 +420,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 1310252c253b9958e4fcd411e706b99c31834eaf
 
-PODFILE CHECKSUM: 41ae57f0dade6e690318cfced5863086b68ddbb3
+PODFILE CHECKSUM: 1b7ae19fb6d5824089509c788c67f30eddb32309
 
 COCOAPODS: 1.10.1
