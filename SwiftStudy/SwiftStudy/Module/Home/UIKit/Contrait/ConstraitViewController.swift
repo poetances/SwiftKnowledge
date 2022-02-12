@@ -109,60 +109,15 @@ class ConstraitViewController: QMUICommonViewController {
         // self.bottomLayoutGuide
         
         
-        let v1 = UIView()
-        v1.backgroundColor = UIColor.red
+        let v1 = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        v1.translatesAutoresizingMaskIntoConstraints = false
+        v1.backgroundColor = UIColor.pumpkin
         view.addSubview(v1)
         
-        let v2 = UIView()
-        v2.backgroundColor = UIColor.gray
-        view.addSubview(v2)
-        
-        let v3 = UIView()
-        v3.backgroundColor = UIColor.purple
-        view.addSubview(v3)
-        
-        let v4 = UIView()
-        v4.backgroundColor = UIColor.blue
-        view.addSubview(v4)
-        
-        v1.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-100)
-            make.left.equalTo(30)
-            make.height.equalTo(100)
-            make.right.equalTo(v2.snp.left).offset(-10)
-        }
-        
-        v2.snp.makeConstraints { make in
-            make.centerY.size.equalTo(v1)
-            make.right.equalTo(v3.snp.left).offset(-10)
-        }
-        
-        v3.snp.makeConstraints { make in
-            make.centerY.size.equalTo(v1)
-            make.right.equalTo(v4.snp.left).offset(-10)
-        }
-        
-        v4.snp.makeConstraints { make in
-            make.centerY.size.equalTo(v1)
-            make.right.equalTo(-30)
-        }
-        
-        
-        let v1v2G = UILayoutGuide()
-        view.addLayoutGuide(v1v2G)
-        v1v2G.snp.makeConstraints { make in
-            make.left.top.bottom.equalTo(v1)
-            make.right.equalTo(v2)
-        }
-        
-        let v5 = UIView()
-        v5.backgroundColor = UIColor.yellow
-        view.addSubview(v5)
-        v5.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.center.equalTo(v1v2G)
-        }
-        
+        v1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 200).isActive = true
+        v1.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        v1.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        v1.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
     

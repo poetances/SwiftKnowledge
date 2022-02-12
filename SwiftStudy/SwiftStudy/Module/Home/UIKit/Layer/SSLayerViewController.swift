@@ -8,14 +8,103 @@
 
 import UIKit
 
+extension CALayer
+   {
+       func pauseAnimation() {
+           if isPaused() == false {
+               let pausedTime = convertTime(CACurrentMediaTime(), from: nil)
+               speed = 0.0
+               timeOffset = pausedTime
+           }
+       }
+
+       func resumeAnimation() {
+           if isPaused() {
+               let pausedTime = timeOffset
+               speed = 1.0
+               timeOffset = 0.0
+               beginTime = 0.0
+               let timeSincePause = convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+               beginTime = timeSincePause
+           }
+       }
+
+       func isPaused() -> Bool {
+           return speed == 0
+       }
+   }
+
 class SSLayerViewController: QMUICommonViewController {
 
     
     var v: SV!
     var v1: SV!
     var layer1: SVlayer!
+    
+    private lazy var tanslateAnimation: CABasicAnimation = {
+        let animation = CABasicAnimation(keyPath: "position.y")
+        animation.duration  = 3
+        animation.fromValue = 0
+        animation.toValue   = 200
+//        animation.isRemovedOnCompletion = false
+//        animation.repeatCount = Float(Int.max)
+        return animation
+    }()
+    
+    let count = 1
     override func initSubviews() {
     
+        layer1 = SVlayer()
+        layer1.backgroundColor = UIColor.pumpkin.cgColor
+        layer1.frame = CGRect(x: 10, y: 200, width: 300, height: 200)
+        view.layer.addSublayer(layer1)
+        layer1.add(tanslateAnimation, forKey: nil)
+        
+        
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        if count % 2 == 0 {
+            layer1.resumeAnimation()
+        }else {
+            layer1.pauseAnimation()
+        }
+        
+
+    }
+    
+    func startAnimation() {
+        let pauseTime = layer1.timeOffset
+        
+        layer1.speed = 1.0
+        layer1.timeOffset = 0
+        layer1.beginTime = 0
+        
+        let sinceTime = layer1.convertTime(CACurrentMediaTime(), from: nil) - pauseTime
+        layer1.beginTime = sinceTime
+    }
+    
+    func pauseAnimation() {
+        let pauseTime = layer1.convertTime(CACurrentMediaTime(), from: nil)
+        
+        layer1.speed = 0
+        layer1.timeOffset = pauseTime
+    }
+    
+    
+    func changeAnimation() {
+        
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(3)
+       // self.layer1.backgroundColor = UIColor.qmui_random().cgColor
+        self.v.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
+        CATransaction.commit()
+        
+    }
+    
+    
+    func setupLayer() {
         v = SV()
         v.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
         v.backgroundColor = UIColor.black
@@ -51,22 +140,6 @@ class SSLayerViewController: QMUICommonViewController {
             make.height.equalTo(100)
         }
         
-        
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.v.layer.delegate = nil
-
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(3)
-       // self.layer1.backgroundColor = UIColor.qmui_random().cgColor
-        self.v.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
-        CATransaction.commit()
-
-//        UIView.animate(withDuration: 5) {
-//
-//            self.v.layer.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
-//        }
     }
 }
 

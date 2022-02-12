@@ -15,3 +15,4 @@
 @_exported import Alamofire
 @_exported import Moya
 @_exported import RxDataSources
+@_exported import QMUIKit

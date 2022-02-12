@@ -12,7 +12,7 @@ import SnapKit
 
 class SSThirdFrameworkVC: SSBaseViewController {
 
-    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "R", "SkeletonView", "---"]
+    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya", "Codable","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "R", "SkeletonView", "---"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,8 @@ extension SSThirdFrameworkVC : UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSObjectMapperVC(), animated: true)
         case "Moya":
             navigationController?.pushViewController(SSMoyaVC(), animated: true)
+        case "Codable":
+            navigationController?.pushViewController(CodableViewController(), animated: true)
         case "QMUI":
             navigationController?.pushViewController(SSQMUIViewController(), animated: true)
         case "RxSwift":

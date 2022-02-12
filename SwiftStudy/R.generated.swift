@@ -387,8 +387,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 18 nibs.
   struct nib {
+    /// Nib `CodableViewController`.
+    static let codableViewController = _R.nib._CodableViewController()
     /// Nib `ConstraitViewController`.
     static let constraitViewController = _R.nib._ConstraitViewController()
     /// Nib `SSErrorVC`.
@@ -423,6 +425,14 @@ struct R: Rswift.Validatable {
     static let schedulersViewController = _R.nib._SchedulersViewController()
     /// Nib `TrailViewController`.
     static let trailViewController = _R.nib._TrailViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CodableViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.codableViewController) instead")
+    static func codableViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.codableViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ConstraitViewController", in: bundle)`
@@ -560,6 +570,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func codableViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.codableViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func constraitViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.constraitViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -658,6 +672,21 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _TrailViewController.validate()
+    }
+
+    struct _CodableViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CodableViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      func secondView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[1] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _ConstraitViewController: Rswift.NibResourceType {

@@ -219,6 +219,8 @@
 		A6F7EBB9254EF6B2002557C9 /* timg-2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A6F7EBB8254EF6B2002557C9 /* timg-2.jpeg */; };
 		A6FD812925807CD10038DFD5 /* SwiftStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FD812825807CD10038DFD5 /* SwiftStudyTests.swift */; };
 		DAEC8FE9A3F14C45CE67F4A4 /* Pods_SwiftStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A364D759A188B92CBADD97 /* Pods_SwiftStudyUITests.framework */; };
+		DE28AD7D278F2EE10030EF2A /* CodableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE28AD7B278F2EE00030EF2A /* CodableViewController.swift */; };
+		DE28AD7E278F2EE10030EF2A /* CodableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE28AD7C278F2EE00030EF2A /* CodableViewController.xib */; };
 		DEFD3EBE26C6AB78004B57EA /* ConstraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD3EBD26C6AB78004B57EA /* ConstraitViewController.swift */; };
 		DEFD3EC026C6ACFE004B57EA /* ConstraitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFD3EBF26C6ACFE004B57EA /* ConstraitViewController.xib */; };
 /* End PBXBuildFile section */
@@ -501,6 +503,8 @@
 		A6FD812825807CD10038DFD5 /* SwiftStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudyTests.swift; sourceTree = "<group>"; };
 		A6FD812A25807CD10038DFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9B04D9ADF254DF4D40086C /* Pods_SwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE28AD7B278F2EE00030EF2A /* CodableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableViewController.swift; sourceTree = "<group>"; };
+		DE28AD7C278F2EE00030EF2A /* CodableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodableViewController.xib; sourceTree = "<group>"; };
 		DEFD3EBD26C6AB78004B57EA /* ConstraitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraitViewController.swift; sourceTree = "<group>"; };
 		DEFD3EBF26C6ACFE004B57EA /* ConstraitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConstraitViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -812,6 +816,7 @@
 				A6433366248F315B00D8C919 /* SnapKit */,
 				A64C2D5024789F0F00C07A5D /* Qmui */,
 				A6983D3B23CD6EBB006F720F /* Moya */,
+				DE28AD79278F2EAC0030EF2A /* Codable */,
 				A62C406123BB2F7A001584CF /* ObjectMapper */,
 				A62C405C23BB2965001584CF /* SwiftJson */,
 				A62C405723BB2366001584CF /* HandyJson */,
@@ -1801,6 +1806,15 @@
 			path = SwiftStudyTests;
 			sourceTree = "<group>";
 		};
+		DE28AD79278F2EAC0030EF2A /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				DE28AD7B278F2EE00030EF2A /* CodableViewController.swift */,
+				DE28AD7C278F2EE00030EF2A /* CodableViewController.xib */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
 		DEFD3EBC26C6AB59004B57EA /* Contrait */ = {
 			isa = PBXGroup;
 			children = (
@@ -1972,6 +1986,7 @@
 				A697A25123AB8F3B00B16AEA /* LaunchScreen.storyboard in Resources */,
 				A62F1E6425AAAB8900D85B02 /* SchedulersViewController.xib in Resources */,
 				A6F7D41025490F4C0061EF67 /* SSKingfisherViewController.xib in Resources */,
+				DE28AD7E278F2EE10030EF2A /* CodableViewController.xib in Resources */,
 				A6DAFE3523AC71AA007E02EA /* summary in Resources */,
 				A6F5EFD725622A7D000CF134 /* SSThreadLockViewController.xib in Resources */,
 				A6D5850823BD9A7600F11F14 /* SSProtocolVC.xib in Resources */,
@@ -2299,6 +2314,7 @@
 				A6945CF9254FFE0D007C673F /* SSCollectionViewCell.swift in Sources */,
 				A65008DA24B5735F000D6B6C /* CJLog.swift in Sources */,
 				A600C4A524B41A500083FC02 /* QDCommonUI.m in Sources */,
+				DE28AD7D278F2EE10030EF2A /* CodableViewController.swift in Sources */,
 				A6BA982823B6EC2500DDD06C /* SSRuntimeVC.swift in Sources */,
 				A6809DD72566061F00EFC7C6 /* UIView+EmptyView.swift in Sources */,
 				A6DE1EF125EF1AC300A0B496 /* PointViewController.swift in Sources */,

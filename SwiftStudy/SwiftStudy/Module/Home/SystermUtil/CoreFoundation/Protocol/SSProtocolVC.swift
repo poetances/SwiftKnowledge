@@ -51,10 +51,12 @@ class SSProtocolVC: SSBaseViewController {
         
         titleName = "Protocol"
         desLab.text = "关于协议Protocol，里面的属性，只能 var {set get} 这种形式来声明。 关于泛型协议、面向协议编程等实现方式。"
+    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print(name,name1, name2, name3)
+        let p = CPtest()
+        p.name()
     }
 
     @IBAction func shakeableButtonClick(_ sender: UIButton) {
@@ -67,6 +69,32 @@ class SSProtocolVC: SSBaseViewController {
     }
 }
 
+protocol PTest: NSObjectProtocol {
+    
+    var age: Int { get }
+    func name()
+}
+
+extension PTest {
+    func name() {
+        print("protocol name func")
+    }
+}
+
+class CPtest:NSObject, PTest {
+   
+    var age: Int {
+        set {
+            self.age = newValue
+        }
+        get { 20 }
+    }
+    
+    func name() {
+        self.age = 04
+        print("class name func")
+    }
+}
 
 
 /*
