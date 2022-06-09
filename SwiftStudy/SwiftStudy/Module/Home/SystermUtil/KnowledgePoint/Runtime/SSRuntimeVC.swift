@@ -9,6 +9,8 @@
 import UIKit
 
 /*
+ oc -> c/c++ -> 汇编 -> 机器语言（属于程序运行的编译阶段）
+
  Runtime知识点：
  将源代码变成可执行程序，一般需要经过编译、链接、运行三个过程。不同的语言可能有些差异。一般静态语言在编译的时候就已经知道了变量类型、调用的函数以及实现等，比如c、swift等。但是oc是动态语言，在编译阶段是不知道变量的具体类型以及调用的函数，只有在运行时才会知道，这也使得oc非常灵活，我们可以在运行的时候来动态修改一些方法实现，这也就给热更新提供了可能，而Runtime其实就是一个库，这个库可以让我们在程序运行的时候动态的创建、检测、修改对象等。
     
@@ -104,6 +106,7 @@ import UIKit
  }
  
  // 精简过的isa_t共用体，cls指向父类。而里面的结构体则保存着对象的一些属性，比如是否是强引用、引用计数器数目等，主要是为了方便释放的。
+ // 占用8个字节，联合体其实就是公用一段内容。
  union isa_t
  {
      isa_t() { }
@@ -276,8 +279,10 @@ import UIKit
     struct objc_method_list * _Nullable instance_methods;
     struct objc_method_list * _Nullable class_methods;
     struct objc_protocol_list * _Nullable protocols;
+    struct objc_propertys_list * _Nullable propertys;
  }
- 
+ // 多个分类重写同一个方法，跟参与编译顺序有关，越是后参与编译的，越是先调用。
+ +load方法有点特殊。 普通方法，是通过objc_msgSend，通过isa来调用。 而+load方法是直接runtime的时候编译的话直接进行调用。
  从上面定义可以看出，Category可以添加对象方法、类方法和协议，但是不能添加属性（没有属性列表）。
  
  Category加载过程。我们知道Category是在运行时动态加载的。而Runtime（运行时）加载过程，离不开dylb的动态链接器。其中工作原理非常复杂，但是我们需要知道的是dylb在执行动态链接后，会执行_objc_init这也是runtime初始化的过程，该过程中，有一个重要的步骤就是attachCategories(cls, cats, true);，该方法就是用

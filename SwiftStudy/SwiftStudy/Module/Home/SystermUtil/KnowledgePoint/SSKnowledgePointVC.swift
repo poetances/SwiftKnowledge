@@ -13,7 +13,7 @@ class SSKnowledgePointVC: UIViewController {
     let datas = ["KeyWords","Function","Range","Runtime","JsonModel","Progress",
     "UniversalLinks","UnsafePoint","KVcKvo","HitTestAndPointInside","Appearance",
     "ModalPresentVc","AddChirldController", "Runloop","SizeThatFits","Countainer", "Extentsion", "UIBezierPath",
-    "Arithmetic", "idfa"]
+    "Arithmetic", "idfa", "super"]
     
 
     
@@ -95,6 +95,8 @@ extension SSKnowledgePointVC: UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 19 {
 
             navigationController?.pushViewController(IdfaViewController(), animated: true)
+        } else if indexPath.row == 20 {
+            navigationController?.pushViewController(SuperViewController(), animated: true)
         }
     }
     

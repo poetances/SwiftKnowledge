@@ -10,28 +10,19 @@ import UIKit
 
 class AssemblyViewController: SSBaseViewController {
 
-    enum Spring: Int {
-        case one, two, three
-    }
-    
+  
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        var a = Spring.one
-        
     
-        a = .two
-        a = .three
-        
-        print(a)
-        
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+
+        
+    }
 
 
 }
-
-
-
