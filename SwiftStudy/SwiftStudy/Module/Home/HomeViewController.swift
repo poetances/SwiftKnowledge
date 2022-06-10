@@ -10,10 +10,14 @@ import UIKit
 import Alamofire
 import SnapKit
 
+struct Pcj {
+
+    var name = 0
+}
 
 class HomeViewController: UIViewController, EmptyViewAble {
     
-
+    var pcj = Pcj()
     
     var datas: Array<String>!
     
@@ -23,7 +27,7 @@ class HomeViewController: UIViewController, EmptyViewAble {
 
         navigationItem.title = "宝藏"
         
-        datas = ["SystermUtil","UIKit","ThirdFramwrok"]
+        datas = ["SystermUtil","UIKit","ThirdFramwrok", ""]
         
         let tab = UITableView(frame: .zero, style: .plain)
         tab.delegate = self
@@ -60,39 +64,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }else if indexPath.row == 2 {
             navigationController?.pushViewController(SSThirdFrameworkVC(), animated: true)
         }else {
-        
-            //runtimeUserSwift()
-       
-            showEmptyView()
+
+            // showEmptyView()
+            print(Mems.ptr(ofVal: &pcj))
+            pcj.name = 12
+            print(Mems.ptr(ofVal: &pcj))
+
         }
-    }
-    
-    func runtimeUserSwift() {
-        
-        // 成员变量
-        var ivarCount: UInt32 = 0
-        let ivars = class_copyIvarList(OCClass.self, &ivarCount)
-        for index in 0..<ivarCount {
-            print("成员变量\(index)：",String(ivar_getName(ivars![Int(index)])!.pointee))
-        }
-        free(ivars)
-        
-        // 属性
-        var propertyCount: UInt32 = 0
-        let propertys = class_copyPropertyList(OCClass.self, &propertyCount)
-        for index in 0..<propertyCount {
-            print("属性\(index)：", String(property_getName(propertys![Int(index)]).pointee))
-        }
-        free(propertys)
-        
-        // 方法列表
-        var methodCount: UInt32 = 0
-        let methods = class_copyMethodList(OCClass.self, &methodCount)
-        for index in 0..<methodCount {
-            print("方法列表\(index)：", method_getName(methods![Int(index)]))
-        }
-        free(methods)
- 
     }
 
 }
